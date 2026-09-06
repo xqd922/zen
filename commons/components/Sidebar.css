@@ -92,9 +92,18 @@
             color: var(--neutral-400);
             transition: color var(--transition-normal);
 
+            .sidebar-tag-name {
+                color: var(--tag-text, inherit);
+                transition: color var(--transition-normal);
+            }
+
             &:hover,
             &.is-active {
                 color: var(--neutral-600);
+
+                .sidebar-tag-name {
+                    color: var(--tag-text-hover, inherit);
+                }
             }
 
             &:active {

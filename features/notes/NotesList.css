@@ -134,10 +134,17 @@
             .notes-list-item-subtext,
             .notes-list-item-tag {
                 font: var(--sm);
-                color: var(--neutral-400);
                 align-content: end;
                 white-space: nowrap;
                 flex-shrink: 0;
+            }
+
+            .notes-list-item-subtext {
+                color: var(--neutral-400);
+            }
+
+            .notes-list-item-tag {
+                color: var(--tag-text, var(--neutral-400));
             }
 
             .notes-list-item-tags {

@@ -14,6 +14,7 @@ import { NotesProvider } from "../../commons/contexts/NotesContext.jsx";
 import { AppProvider } from '../../commons/contexts/AppContext.jsx';
 import { openModal } from '../../commons/components/Modal.jsx';
 import EmptyState from '../../commons/components/EmptyState.jsx';
+import TagItem from "../tags/TagItem.jsx";
 import "./NotesList.css";
 
 export default function NotesList({ notes = [], total, isLoading, images = [], imagesTotal, isImagesLoading, view, onViewChange, onLoadMoreClick, onLoadMoreImagesClick, isMultiSelect, selectedIds, onMultiSelectStart, onToggleSelect }) {
@@ -64,7 +65,7 @@ function NotesListItem({ note, isMultiSelect, isSelected, onMultiSelectStart, on
   const updatedAtDate = new Date(note.updatedAt);
   const shortUpdatedAt = formatDate(updatedAtDate);
   const fullUpdatedAt = updatedAtDate.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
-  const tags = note.tags?.map(tag => <div className="notes-list-item-tag" key={tag.name}>{tag.name}</div>);
+  const tags = note.tags?.map(tag => <TagItem key={tag.name} tag={tag} variant="label" className="notes-list-item-tag" />);
   const longPress = useLongPress(() => onMultiSelectStart(note.noteId));
   let title = <div className="notes-list-item-title">{note.title}</div>
 
@@ -124,7 +125,7 @@ function NotesListItem({ note, isMultiSelect, isSelected, onMultiSelectStart, on
 
 function NotesGridItem({ note, index }) {
   const link = `/notes/${note.noteId}`;
-  const tags = note.tags?.map(tag => (<Link className="tag" key={tag.tagId} to={`/notes/?tagId=${tag.tagId}`} shouldPreserveSearchParams>{tag.name}</Link>));
+  const tags = note.tags?.map(tag => <TagItem key={tag.tagId} tag={tag} />);
   let title = <div className="notes-grid-item-title">{note.title}</div>
 
   if (note.title === "") {

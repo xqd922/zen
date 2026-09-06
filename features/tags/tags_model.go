@@ -12,13 +12,14 @@ func GetAllTags() ([]Tag, error) {
 		SELECT
 			t.tag_id,
 			t.name,
+			t.color,
 			COUNT(nt.note_id) AS note_count
 		FROM
 			tags t
 		LEFT JOIN
 			note_tags nt ON t.tag_id = nt.tag_id
 		GROUP BY
-			t.tag_id, t.name
+			t.tag_id, t.name, t.color
 		ORDER BY
 			note_count DESC
 	`
@@ -33,7 +34,7 @@ func GetAllTags() ([]Tag, error) {
 
 	for rows.Next() {
 		var tag Tag
-		err = rows.Scan(&tag.TagID, &tag.Name, &tag.NoteCount)
+		err = rows.Scan(&tag.TagID, &tag.Name, &tag.Color, &tag.NoteCount)
 		if err != nil {
 			err = fmt.Errorf("error scanning tag: %w", err)
 			slog.Error(err.Error())
@@ -51,6 +52,7 @@ func SearchTags(term string) ([]Tag, error) {
 		SELECT
 			t.tag_id,
 			t.name,
+			t.color,
 			COUNT(nt.note_id) AS note_count
 		FROM
 			tags t
@@ -59,8 +61,8 @@ func SearchTags(term string) ([]Tag, error) {
 		WHERE
 			t.name LIKE '%' || ? || '%'
 		GROUP BY
-			t.tag_id, t.name
-		ORDER BY 
+			t.tag_id, t.name, t.color
+		ORDER BY
 			-- Boosting rows starting with the search term
 			CASE
 				WHEN t.name LIKE ? || '%' THEN 1
@@ -80,7 +82,7 @@ func SearchTags(term string) ([]Tag, error) {
 
 	for rows.Next() {
 		var tag Tag
-		err = rows.Scan(&tag.TagID, &tag.Name, &tag.NoteCount)
+		err = rows.Scan(&tag.TagID, &tag.Name, &tag.Color, &tag.NoteCount)
 		if err != nil {
 			err = fmt.Errorf("error scanning tag: %w", err)
 			slog.Error(err.Error())
@@ -98,6 +100,7 @@ func GetTagsByFocusModeID(focusModeID int) ([]Tag, error) {
 		SELECT
 			t.tag_id,
 			t.name,
+			t.color,
 			COUNT(nt.note_id) AS note_count
 		FROM
 			tags t
@@ -108,7 +111,7 @@ func GetTagsByFocusModeID(focusModeID int) ([]Tag, error) {
 		WHERE
 			f.focus_mode_id = ?
 		GROUP BY
-			t.tag_id, t.name
+			t.tag_id, t.name, t.color
 		ORDER BY
 			t.tag_id ASC
 	`
@@ -123,7 +126,7 @@ func GetTagsByFocusModeID(focusModeID int) ([]Tag, error) {
 
 	for rows.Next() {
 		var tag Tag
-		err = rows.Scan(&tag.TagID, &tag.Name, &tag.NoteCount)
+		err = rows.Scan(&tag.TagID, &tag.Name, &tag.Color, &tag.NoteCount)
 		if err != nil {
 			err = fmt.Errorf("error scanning tag: %w", err)
 			slog.Error(err.Error())
@@ -140,12 +143,13 @@ func UpdateTag(tag Tag) error {
 		UPDATE
 			tags
 		SET
-			name = ?
+			name = ?,
+			color = ?
 		WHERE
 			tag_id = ?
 	`
 
-	_, err := sqlite.DB.Exec(query, tag.Name, tag.TagID)
+	_, err := sqlite.DB.Exec(query, tag.Name, tag.Color, tag.TagID)
 	if err != nil {
 		err = fmt.Errorf("error updating tag: %w", err)
 		slog.Error(err.Error())

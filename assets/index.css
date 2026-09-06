@@ -19,14 +19,31 @@
     --neutral-700: #404040;
     --neutral-800: #262626;
     --neutral-900: #171717;
+    --red-100: #FEE2E2;
     --red-500: #EF4444;
     --red-600: #DC2626;
     --red-700: #B91C1C;
+    --orange-100: #FFEDD5;
+    --orange-500: #F97316;
+    --orange-600: #EA580C;
     --yellow-100: #FEF9C3;
     --yellow-400: #FACC15;
     --yellow-500: #EAB308;
+    --green-100: #DCFCE7;
     --green-500: #22C55E;
     --green-600: #16A34A;
+    --teal-100: #CCFBF1;
+    --teal-500: #14B8A6;
+    --teal-600: #0D9488;
+    --blue-100: #DBEAFE;
+    --blue-500: #3B82F6;
+    --blue-600: #2563EB;
+    --purple-100: #EDE9FE;
+    --purple-500: #8B5CF6;
+    --purple-600: #7C3AED;
+    --pink-100: #FCE7F3;
+    --pink-500: #EC4899;
+    --pink-600: #DB2777;
 
     /* typography */
     /* Major Second */
@@ -98,6 +115,53 @@
     --bg-primary: #FFF;
     --bg-secondary: var(--neutral-50);
     --bg-tertiary: var(--neutral-100);
+
+    /*
+     * Tag colors, derived from the Tailwind 500 of each hue: saturation is
+     * scaled down and lightness pinned per role, so a colored tag carries hue
+     * without reading louder than a plain one. To add a color, add its
+     * --<name>-500 above and copy one of these five-line groups.
+     */
+    --tag-red-text: hsl(from var(--red-500) h calc(s * 0.53) 64.0%);
+    --tag-red-text-hover: hsl(from var(--red-500) h calc(s * 0.48) 44.0%);
+    --tag-red-bg: hsl(from var(--red-500) h s 95.5%);
+    --tag-red-bg-hover: hsl(from var(--red-500) h calc(s * 0.62) 90.3%);
+    --tag-red-remove-hover: hsl(from var(--red-500) h calc(s * 0.35) 83.7%);
+    --tag-orange-text: hsl(from var(--orange-500) h calc(s * 0.53) 64.0%);
+    --tag-orange-text-hover: hsl(from var(--orange-500) h calc(s * 0.48) 44.0%);
+    --tag-orange-bg: hsl(from var(--orange-500) h s 95.5%);
+    --tag-orange-bg-hover: hsl(from var(--orange-500) h calc(s * 0.62) 90.3%);
+    --tag-orange-remove-hover: hsl(from var(--orange-500) h calc(s * 0.35) 83.7%);
+    --tag-yellow-text: hsl(from var(--yellow-500) h calc(s * 0.53) 64.0%);
+    --tag-yellow-text-hover: hsl(from var(--yellow-500) h calc(s * 0.48) 44.0%);
+    --tag-yellow-bg: hsl(from var(--yellow-500) h s 95.5%);
+    --tag-yellow-bg-hover: hsl(from var(--yellow-500) h calc(s * 0.62) 90.3%);
+    --tag-yellow-remove-hover: hsl(from var(--yellow-500) h calc(s * 0.35) 83.7%);
+    --tag-green-text: hsl(from var(--green-500) h calc(s * 0.53) 64.0%);
+    --tag-green-text-hover: hsl(from var(--green-500) h calc(s * 0.48) 44.0%);
+    --tag-green-bg: hsl(from var(--green-500) h s 95.5%);
+    --tag-green-bg-hover: hsl(from var(--green-500) h calc(s * 0.62) 90.3%);
+    --tag-green-remove-hover: hsl(from var(--green-500) h calc(s * 0.35) 83.7%);
+    --tag-teal-text: hsl(from var(--teal-500) h calc(s * 0.53) 64.0%);
+    --tag-teal-text-hover: hsl(from var(--teal-500) h calc(s * 0.48) 44.0%);
+    --tag-teal-bg: hsl(from var(--teal-500) h s 95.5%);
+    --tag-teal-bg-hover: hsl(from var(--teal-500) h calc(s * 0.62) 90.3%);
+    --tag-teal-remove-hover: hsl(from var(--teal-500) h calc(s * 0.35) 83.7%);
+    --tag-blue-text: hsl(from var(--blue-500) h calc(s * 0.53) 64.0%);
+    --tag-blue-text-hover: hsl(from var(--blue-500) h calc(s * 0.48) 44.0%);
+    --tag-blue-bg: hsl(from var(--blue-500) h s 95.5%);
+    --tag-blue-bg-hover: hsl(from var(--blue-500) h calc(s * 0.62) 90.3%);
+    --tag-blue-remove-hover: hsl(from var(--blue-500) h calc(s * 0.35) 83.7%);
+    --tag-purple-text: hsl(from var(--purple-500) h calc(s * 0.53) 64.0%);
+    --tag-purple-text-hover: hsl(from var(--purple-500) h calc(s * 0.48) 44.0%);
+    --tag-purple-bg: hsl(from var(--purple-500) h s 95.5%);
+    --tag-purple-bg-hover: hsl(from var(--purple-500) h calc(s * 0.62) 90.3%);
+    --tag-purple-remove-hover: hsl(from var(--purple-500) h calc(s * 0.35) 83.7%);
+    --tag-pink-text: hsl(from var(--pink-500) h calc(s * 0.53) 64.0%);
+    --tag-pink-text-hover: hsl(from var(--pink-500) h calc(s * 0.48) 44.0%);
+    --tag-pink-bg: hsl(from var(--pink-500) h s 95.5%);
+    --tag-pink-bg-hover: hsl(from var(--pink-500) h calc(s * 0.62) 90.3%);
+    --tag-pink-remove-hover: hsl(from var(--pink-500) h calc(s * 0.35) 83.7%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -112,9 +176,22 @@
         --neutral-700: #E5E5E5;
         --neutral-800: #F5F5F5;
         --neutral-900: #FAFAFA;
+        --red-100: #450A0A;
         --red-600: #991B1B;
         --red-700: #B91C1C;
+        --orange-100: #431407;
+        --orange-600: #C2410C;
         --yellow-100: #A16207;
+        --green-100: #052E16;
+        --green-600: #15803D;
+        --teal-100: #042F2E;
+        --teal-600: #0F766E;
+        --blue-100: #172554;
+        --blue-600: #1D4ED8;
+        --purple-100: #2E1065;
+        --purple-600: #6D28D9;
+        --pink-100: #500724;
+        --pink-600: #BE185D;
 
         /* elevation - darker shadows for dark mode */
         --shadow-1: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px;
@@ -130,6 +207,48 @@
         --bg-primary: #121212;
         --bg-secondary: var(--neutral-50);
         --bg-tertiary: var(--neutral-100);
+
+        /* tag colors, mirrored: the dark theme's rest is the light theme's hover */
+        --tag-red-text: hsl(from var(--red-500) h calc(s * 0.48) 44.0%);
+        --tag-red-text-hover: hsl(from var(--red-500) h calc(s * 0.53) 64.0%);
+        --tag-red-bg: hsl(from var(--red-500) h calc(s * 0.44) 14.8%);
+        --tag-red-bg-hover: hsl(from var(--red-500) h calc(s * 0.26) 25.3%);
+        --tag-red-remove-hover: hsl(from var(--red-500) h calc(s * 0.21) 32.4%);
+        --tag-orange-text: hsl(from var(--orange-500) h calc(s * 0.48) 44.0%);
+        --tag-orange-text-hover: hsl(from var(--orange-500) h calc(s * 0.53) 64.0%);
+        --tag-orange-bg: hsl(from var(--orange-500) h calc(s * 0.44) 14.8%);
+        --tag-orange-bg-hover: hsl(from var(--orange-500) h calc(s * 0.26) 25.3%);
+        --tag-orange-remove-hover: hsl(from var(--orange-500) h calc(s * 0.21) 32.4%);
+        --tag-yellow-text: hsl(from var(--yellow-500) h calc(s * 0.48) 44.0%);
+        --tag-yellow-text-hover: hsl(from var(--yellow-500) h calc(s * 0.53) 64.0%);
+        --tag-yellow-bg: hsl(from var(--yellow-500) h calc(s * 0.44) 14.8%);
+        --tag-yellow-bg-hover: hsl(from var(--yellow-500) h calc(s * 0.26) 25.3%);
+        --tag-yellow-remove-hover: hsl(from var(--yellow-500) h calc(s * 0.21) 32.4%);
+        --tag-green-text: hsl(from var(--green-500) h calc(s * 0.48) 44.0%);
+        --tag-green-text-hover: hsl(from var(--green-500) h calc(s * 0.53) 64.0%);
+        --tag-green-bg: hsl(from var(--green-500) h calc(s * 0.44) 14.8%);
+        --tag-green-bg-hover: hsl(from var(--green-500) h calc(s * 0.26) 25.3%);
+        --tag-green-remove-hover: hsl(from var(--green-500) h calc(s * 0.21) 32.4%);
+        --tag-teal-text: hsl(from var(--teal-500) h calc(s * 0.48) 44.0%);
+        --tag-teal-text-hover: hsl(from var(--teal-500) h calc(s * 0.53) 64.0%);
+        --tag-teal-bg: hsl(from var(--teal-500) h calc(s * 0.44) 14.8%);
+        --tag-teal-bg-hover: hsl(from var(--teal-500) h calc(s * 0.26) 25.3%);
+        --tag-teal-remove-hover: hsl(from var(--teal-500) h calc(s * 0.21) 32.4%);
+        --tag-blue-text: hsl(from var(--blue-500) h calc(s * 0.48) 44.0%);
+        --tag-blue-text-hover: hsl(from var(--blue-500) h calc(s * 0.53) 64.0%);
+        --tag-blue-bg: hsl(from var(--blue-500) h calc(s * 0.44) 14.8%);
+        --tag-blue-bg-hover: hsl(from var(--blue-500) h calc(s * 0.26) 25.3%);
+        --tag-blue-remove-hover: hsl(from var(--blue-500) h calc(s * 0.21) 32.4%);
+        --tag-purple-text: hsl(from var(--purple-500) h calc(s * 0.48) 44.0%);
+        --tag-purple-text-hover: hsl(from var(--purple-500) h calc(s * 0.53) 64.0%);
+        --tag-purple-bg: hsl(from var(--purple-500) h calc(s * 0.44) 14.8%);
+        --tag-purple-bg-hover: hsl(from var(--purple-500) h calc(s * 0.26) 25.3%);
+        --tag-purple-remove-hover: hsl(from var(--purple-500) h calc(s * 0.21) 32.4%);
+        --tag-pink-text: hsl(from var(--pink-500) h calc(s * 0.48) 44.0%);
+        --tag-pink-text-hover: hsl(from var(--pink-500) h calc(s * 0.53) 64.0%);
+        --tag-pink-bg: hsl(from var(--pink-500) h calc(s * 0.44) 14.8%);
+        --tag-pink-bg-hover: hsl(from var(--pink-500) h calc(s * 0.26) 25.3%);
+        --tag-pink-remove-hover: hsl(from var(--pink-500) h calc(s * 0.21) 32.4%);
     }
 }
 
@@ -145,9 +264,22 @@
     --neutral-700: #E5E5E5;
     --neutral-800: #F5F5F5;
     --neutral-900: #FAFAFA;
+    --red-100: #450A0A;
     --red-600: #991B1B;
     --red-700: #B91C1C;
+    --orange-100: #431407;
+    --orange-600: #C2410C;
     --yellow-100: #A16207;
+    --green-100: #052E16;
+    --green-600: #15803D;
+    --teal-100: #042F2E;
+    --teal-600: #0F766E;
+    --blue-100: #172554;
+    --blue-600: #1D4ED8;
+    --purple-100: #2E1065;
+    --purple-600: #6D28D9;
+    --pink-100: #500724;
+    --pink-600: #BE185D;
 
     /* elevation - darker shadows for dark mode */
     --shadow-1: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px;
@@ -163,6 +295,48 @@
     --bg-primary: #121212;
     --bg-secondary: var(--neutral-50);
     --bg-tertiary: var(--neutral-100);
+
+    /* tag colors, mirrored: the dark theme's rest is the light theme's hover */
+    --tag-red-text: hsl(from var(--red-500) h calc(s * 0.48) 44.0%);
+    --tag-red-text-hover: hsl(from var(--red-500) h calc(s * 0.53) 64.0%);
+    --tag-red-bg: hsl(from var(--red-500) h calc(s * 0.44) 14.8%);
+    --tag-red-bg-hover: hsl(from var(--red-500) h calc(s * 0.26) 25.3%);
+    --tag-red-remove-hover: hsl(from var(--red-500) h calc(s * 0.21) 32.4%);
+    --tag-orange-text: hsl(from var(--orange-500) h calc(s * 0.48) 44.0%);
+    --tag-orange-text-hover: hsl(from var(--orange-500) h calc(s * 0.53) 64.0%);
+    --tag-orange-bg: hsl(from var(--orange-500) h calc(s * 0.44) 14.8%);
+    --tag-orange-bg-hover: hsl(from var(--orange-500) h calc(s * 0.26) 25.3%);
+    --tag-orange-remove-hover: hsl(from var(--orange-500) h calc(s * 0.21) 32.4%);
+    --tag-yellow-text: hsl(from var(--yellow-500) h calc(s * 0.48) 44.0%);
+    --tag-yellow-text-hover: hsl(from var(--yellow-500) h calc(s * 0.53) 64.0%);
+    --tag-yellow-bg: hsl(from var(--yellow-500) h calc(s * 0.44) 14.8%);
+    --tag-yellow-bg-hover: hsl(from var(--yellow-500) h calc(s * 0.26) 25.3%);
+    --tag-yellow-remove-hover: hsl(from var(--yellow-500) h calc(s * 0.21) 32.4%);
+    --tag-green-text: hsl(from var(--green-500) h calc(s * 0.48) 44.0%);
+    --tag-green-text-hover: hsl(from var(--green-500) h calc(s * 0.53) 64.0%);
+    --tag-green-bg: hsl(from var(--green-500) h calc(s * 0.44) 14.8%);
+    --tag-green-bg-hover: hsl(from var(--green-500) h calc(s * 0.26) 25.3%);
+    --tag-green-remove-hover: hsl(from var(--green-500) h calc(s * 0.21) 32.4%);
+    --tag-teal-text: hsl(from var(--teal-500) h calc(s * 0.48) 44.0%);
+    --tag-teal-text-hover: hsl(from var(--teal-500) h calc(s * 0.53) 64.0%);
+    --tag-teal-bg: hsl(from var(--teal-500) h calc(s * 0.44) 14.8%);
+    --tag-teal-bg-hover: hsl(from var(--teal-500) h calc(s * 0.26) 25.3%);
+    --tag-teal-remove-hover: hsl(from var(--teal-500) h calc(s * 0.21) 32.4%);
+    --tag-blue-text: hsl(from var(--blue-500) h calc(s * 0.48) 44.0%);
+    --tag-blue-text-hover: hsl(from var(--blue-500) h calc(s * 0.53) 64.0%);
+    --tag-blue-bg: hsl(from var(--blue-500) h calc(s * 0.44) 14.8%);
+    --tag-blue-bg-hover: hsl(from var(--blue-500) h calc(s * 0.26) 25.3%);
+    --tag-blue-remove-hover: hsl(from var(--blue-500) h calc(s * 0.21) 32.4%);
+    --tag-purple-text: hsl(from var(--purple-500) h calc(s * 0.48) 44.0%);
+    --tag-purple-text-hover: hsl(from var(--purple-500) h calc(s * 0.53) 64.0%);
+    --tag-purple-bg: hsl(from var(--purple-500) h calc(s * 0.44) 14.8%);
+    --tag-purple-bg-hover: hsl(from var(--purple-500) h calc(s * 0.26) 25.3%);
+    --tag-purple-remove-hover: hsl(from var(--purple-500) h calc(s * 0.21) 32.4%);
+    --tag-pink-text: hsl(from var(--pink-500) h calc(s * 0.48) 44.0%);
+    --tag-pink-text-hover: hsl(from var(--pink-500) h calc(s * 0.53) 64.0%);
+    --tag-pink-bg: hsl(from var(--pink-500) h calc(s * 0.44) 14.8%);
+    --tag-pink-bg-hover: hsl(from var(--pink-500) h calc(s * 0.26) 25.3%);
+    --tag-pink-remove-hover: hsl(from var(--pink-500) h calc(s * 0.21) 32.4%);
 }
 
 [data-theme="light"] {
@@ -176,14 +350,31 @@
     --neutral-700: #404040;
     --neutral-800: #262626;
     --neutral-900: #171717;
+    --red-100: #FEE2E2;
     --red-500: #EF4444;
     --red-600: #DC2626;
     --red-700: #B91C1C;
+    --orange-100: #FFEDD5;
+    --orange-500: #F97316;
+    --orange-600: #EA580C;
     --yellow-100: #FEF9C3;
     --yellow-400: #CA8A04;
     --yellow-500: #EAB308;
+    --green-100: #DCFCE7;
     --green-500: #22C55E;
     --green-600: #16A34A;
+    --teal-100: #CCFBF1;
+    --teal-500: #14B8A6;
+    --teal-600: #0D9488;
+    --blue-100: #DBEAFE;
+    --blue-500: #3B82F6;
+    --blue-600: #2563EB;
+    --purple-100: #EDE9FE;
+    --purple-500: #8B5CF6;
+    --purple-600: #7C3AED;
+    --pink-100: #FCE7F3;
+    --pink-500: #EC4899;
+    --pink-600: #DB2777;
 
     /* elevation */
     --shadow-1: rgba(0, 0, 0, 0.01) 0px 1px 3px 0px, rgba(0, 0, 0, 0.10) 0px 1px 3px 0px;
@@ -199,6 +390,48 @@
     --bg-primary: #FFF;
     --bg-secondary: var(--neutral-50);
     --bg-tertiary: var(--neutral-100);
+
+    /* tag colors - same L* and chroma as the neutral tag, per the base :root note */
+    --tag-red-text: hsl(from var(--red-500) h calc(s * 0.53) 64.0%);
+    --tag-red-text-hover: hsl(from var(--red-500) h calc(s * 0.48) 44.0%);
+    --tag-red-bg: hsl(from var(--red-500) h s 95.5%);
+    --tag-red-bg-hover: hsl(from var(--red-500) h calc(s * 0.62) 90.3%);
+    --tag-red-remove-hover: hsl(from var(--red-500) h calc(s * 0.35) 83.7%);
+    --tag-orange-text: hsl(from var(--orange-500) h calc(s * 0.53) 64.0%);
+    --tag-orange-text-hover: hsl(from var(--orange-500) h calc(s * 0.48) 44.0%);
+    --tag-orange-bg: hsl(from var(--orange-500) h s 95.5%);
+    --tag-orange-bg-hover: hsl(from var(--orange-500) h calc(s * 0.62) 90.3%);
+    --tag-orange-remove-hover: hsl(from var(--orange-500) h calc(s * 0.35) 83.7%);
+    --tag-yellow-text: hsl(from var(--yellow-500) h calc(s * 0.53) 64.0%);
+    --tag-yellow-text-hover: hsl(from var(--yellow-500) h calc(s * 0.48) 44.0%);
+    --tag-yellow-bg: hsl(from var(--yellow-500) h s 95.5%);
+    --tag-yellow-bg-hover: hsl(from var(--yellow-500) h calc(s * 0.62) 90.3%);
+    --tag-yellow-remove-hover: hsl(from var(--yellow-500) h calc(s * 0.35) 83.7%);
+    --tag-green-text: hsl(from var(--green-500) h calc(s * 0.53) 64.0%);
+    --tag-green-text-hover: hsl(from var(--green-500) h calc(s * 0.48) 44.0%);
+    --tag-green-bg: hsl(from var(--green-500) h s 95.5%);
+    --tag-green-bg-hover: hsl(from var(--green-500) h calc(s * 0.62) 90.3%);
+    --tag-green-remove-hover: hsl(from var(--green-500) h calc(s * 0.35) 83.7%);
+    --tag-teal-text: hsl(from var(--teal-500) h calc(s * 0.53) 64.0%);
+    --tag-teal-text-hover: hsl(from var(--teal-500) h calc(s * 0.48) 44.0%);
+    --tag-teal-bg: hsl(from var(--teal-500) h s 95.5%);
+    --tag-teal-bg-hover: hsl(from var(--teal-500) h calc(s * 0.62) 90.3%);
+    --tag-teal-remove-hover: hsl(from var(--teal-500) h calc(s * 0.35) 83.7%);
+    --tag-blue-text: hsl(from var(--blue-500) h calc(s * 0.53) 64.0%);
+    --tag-blue-text-hover: hsl(from var(--blue-500) h calc(s * 0.48) 44.0%);
+    --tag-blue-bg: hsl(from var(--blue-500) h s 95.5%);
+    --tag-blue-bg-hover: hsl(from var(--blue-500) h calc(s * 0.62) 90.3%);
+    --tag-blue-remove-hover: hsl(from var(--blue-500) h calc(s * 0.35) 83.7%);
+    --tag-purple-text: hsl(from var(--purple-500) h calc(s * 0.53) 64.0%);
+    --tag-purple-text-hover: hsl(from var(--purple-500) h calc(s * 0.48) 44.0%);
+    --tag-purple-bg: hsl(from var(--purple-500) h s 95.5%);
+    --tag-purple-bg-hover: hsl(from var(--purple-500) h calc(s * 0.62) 90.3%);
+    --tag-purple-remove-hover: hsl(from var(--purple-500) h calc(s * 0.35) 83.7%);
+    --tag-pink-text: hsl(from var(--pink-500) h calc(s * 0.53) 64.0%);
+    --tag-pink-text-hover: hsl(from var(--pink-500) h calc(s * 0.48) 44.0%);
+    --tag-pink-bg: hsl(from var(--pink-500) h s 95.5%);
+    --tag-pink-bg-hover: hsl(from var(--pink-500) h calc(s * 0.62) 90.3%);
+    --tag-pink-remove-hover: hsl(from var(--pink-500) h calc(s * 0.35) 83.7%);
 }
 
 * {
@@ -277,14 +510,16 @@ svg.lucide {
 }
 
 .tag {
+    --tag-remove-bg-hover: var(--neutral-300);
+
     display: inline-flex;
     align-items: stretch;
     margin-right: var(--spacing-1);
     margin-bottom: var(--spacing-1);
     border-radius: 4px;
     font-weight: 500;
-    color: var(--neutral-400);
-    background-color: var(--neutral-100);
+    color: var(--tag-text, var(--neutral-400));
+    background-color: var(--tag-bg, var(--neutral-100));
     font-size: 14px;
     transition-property: color, background-color;
     transition-duration: var(--transition-normal);
@@ -293,8 +528,8 @@ svg.lucide {
     user-select: none;
 
     &:hover {
-        color: var(--neutral-500);
-        background-color: var(--neutral-200);
+        color: var(--tag-text-hover, var(--neutral-500));
+        background-color: var(--tag-bg-hover, var(--neutral-200));
     }
 
     &:active {
@@ -335,22 +570,12 @@ svg.lucide {
                 circle,
                 rect,
                 path {
-                    stroke: var(--neutral-500);
+                    stroke: currentColor;
                 }
             }
 
             &:hover {
-                background-color: var(--neutral-300);
-
-                svg.lucide {
-
-                    line,
-                    circle,
-                    rect,
-                    path {
-                        stroke: var(--neutral-500);
-                    }
-                }
+                background-color: var(--tag-remove-bg-hover);
             }
 
             &:active {
@@ -360,3 +585,69 @@ svg.lucide {
         }
     }
 }
+
+/* Maps each palette color onto generic names that tag consumers read. */
+.color-red {
+    --tag-text: var(--tag-red-text);
+    --tag-text-hover: var(--tag-red-text-hover);
+    --tag-bg: var(--tag-red-bg);
+    --tag-bg-hover: var(--tag-red-bg-hover);
+    --tag-remove-bg-hover: var(--tag-red-remove-hover);
+}
+
+.color-orange {
+    --tag-text: var(--tag-orange-text);
+    --tag-text-hover: var(--tag-orange-text-hover);
+    --tag-bg: var(--tag-orange-bg);
+    --tag-bg-hover: var(--tag-orange-bg-hover);
+    --tag-remove-bg-hover: var(--tag-orange-remove-hover);
+}
+
+.color-yellow {
+    --tag-text: var(--tag-yellow-text);
+    --tag-text-hover: var(--tag-yellow-text-hover);
+    --tag-bg: var(--tag-yellow-bg);
+    --tag-bg-hover: var(--tag-yellow-bg-hover);
+    --tag-remove-bg-hover: var(--tag-yellow-remove-hover);
+}
+
+.color-green {
+    --tag-text: var(--tag-green-text);
+    --tag-text-hover: var(--tag-green-text-hover);
+    --tag-bg: var(--tag-green-bg);
+    --tag-bg-hover: var(--tag-green-bg-hover);
+    --tag-remove-bg-hover: var(--tag-green-remove-hover);
+}
+
+.color-teal {
+    --tag-text: var(--tag-teal-text);
+    --tag-text-hover: var(--tag-teal-text-hover);
+    --tag-bg: var(--tag-teal-bg);
+    --tag-bg-hover: var(--tag-teal-bg-hover);
+    --tag-remove-bg-hover: var(--tag-teal-remove-hover);
+}
+
+.color-blue {
+    --tag-text: var(--tag-blue-text);
+    --tag-text-hover: var(--tag-blue-text-hover);
+    --tag-bg: var(--tag-blue-bg);
+    --tag-bg-hover: var(--tag-blue-bg-hover);
+    --tag-remove-bg-hover: var(--tag-blue-remove-hover);
+}
+
+.color-purple {
+    --tag-text: var(--tag-purple-text);
+    --tag-text-hover: var(--tag-purple-text-hover);
+    --tag-bg: var(--tag-purple-bg);
+    --tag-bg-hover: var(--tag-purple-bg-hover);
+    --tag-remove-bg-hover: var(--tag-purple-remove-hover);
+}
+
+.color-pink {
+    --tag-text: var(--tag-pink-text);
+    --tag-text-hover: var(--tag-pink-text-hover);
+    --tag-bg: var(--tag-pink-bg);
+    --tag-bg-hover: var(--tag-pink-bg-hover);
+    --tag-remove-bg-hover: var(--tag-pink-remove-hover);
+}
+

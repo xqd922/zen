@@ -32,7 +32,8 @@ func GetAllNotes(filter NotesFilter) ([]Note, int, error) {
 				COALESCE(
 					JSON_GROUP_ARRAY(JSON_OBJECT(
 						'tagId', t2.tag_id,
-						'name', t2.name
+						'name', t2.name,
+						'color', t2.color
 					)), '[]'
 				) as tags_json,
 				n.archived_at,
@@ -77,7 +78,8 @@ func GetAllNotes(filter NotesFilter) ([]Note, int, error) {
 				COALESCE(
 					JSON_GROUP_ARRAY(JSON_OBJECT(
 						'tagId', t.tag_id,
-						'name', t.name
+						'name', t.name,
+						'color', t.color
 					)), '[]'
 				) as tags_json,
 				n.archived_at,
@@ -130,7 +132,8 @@ func GetAllNotes(filter NotesFilter) ([]Note, int, error) {
 					WHEN COUNT(t.tag_id) > 0 THEN
 						JSON_GROUP_ARRAY(JSON_OBJECT(
 							'tagId', t.tag_id,
-							'name', t.name
+							'name', t.name,
+							'color', t.color
 						))
 					ELSE '[]'
 				END AS tags_json,
@@ -218,7 +221,8 @@ func GetNoteByID(noteID int) (Note, error) {
 				WHEN COUNT(t.tag_id) > 0 THEN
 					JSON_GROUP_ARRAY(JSON_OBJECT(
 						'tagId', t.tag_id,
-						'name', t.name
+						'name', t.name,
+						'color', t.color
 					))
 				ELSE '[]'
 			END AS tags_json,
@@ -354,7 +358,8 @@ func CreateNote(note Note) (Note, error) {
 			COALESCE(
 				JSON_GROUP_ARRAY(JSON_OBJECT(
 					'tagId', t.tag_id,
-					'name', t.name
+					'name', t.name,
+					'color', t.color
 				)), '[]'
 			) as tags_json
 		FROM
@@ -486,7 +491,8 @@ func UpdateNote(note Note) (Note, error) {
 			COALESCE(
 				JSON_GROUP_ARRAY(JSON_OBJECT(
 					'tagId', t.tag_id,
-					'name', t.name
+					'name', t.name,
+					'color', t.color
 				)), '[]'
 			) as tags_json
 		FROM
@@ -937,7 +943,8 @@ func GetRelatedNotes(noteID int, limit int) ([]Note, error) {
 				SELECT COALESCE(
 					JSON_GROUP_ARRAY(JSON_OBJECT(
 						'tagId', t2.tag_id,
-						'name', t2.name
+						'name', t2.name,
+						'color', t2.color
 					)), '[]'
 				)
 				FROM note_tags nt2

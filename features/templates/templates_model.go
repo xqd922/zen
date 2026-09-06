@@ -27,7 +27,8 @@ func GetAllTemplates() ([]Template, error) {
 					CASE 
 						WHEN tag.tag_id IS NOT NULL THEN JSON_OBJECT(
 							'tagId', tag.tag_id,
-							'name', tag.name
+							'name', tag.name,
+							'color', tag.color
 						)
 						ELSE NULL
 					END
@@ -95,7 +96,8 @@ func GetTemplateByID(templateID int) (Template, error) {
 					CASE 
 						WHEN tag.tag_id IS NOT NULL THEN JSON_OBJECT(
 							'tagId', tag.tag_id,
-							'name', tag.name
+							'name', tag.name,
+							'color', tag.color
 						)
 						ELSE NULL
 					END
@@ -320,7 +322,8 @@ func GetRecommendedTemplates(limit int) ([]Template, error) {
 					CASE 
 						WHEN tag.tag_id IS NOT NULL THEN JSON_OBJECT(
 							'tagId', tag.tag_id,
-							'name', tag.name
+							'name', tag.name,
+							'color', tag.color
 						)
 						ELSE NULL
 					END

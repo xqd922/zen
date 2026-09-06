@@ -2,16 +2,23 @@ package tags
 
 import (
 	"encoding/json"
+	"errors"
+	"fmt"
+	"log/slog"
 	"net/http"
 	"strconv"
+	"strings"
 	"zen/commons/utils"
 )
 
 type Tag struct {
 	TagID     int    `json:"tagId"`
 	Name      string `json:"name"`
+	Color     string `json:"color"`
 	NoteCount int    `json:"noteCount"`
 }
+
+const DefaultTagColor = "gray"
 
 func HandleGetTags(w http.ResponseWriter, r *http.Request) {
 	var tags []Tag
@@ -53,6 +60,16 @@ func HandleUpdateTag(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if tag.Color == "" {
+		tag.Color = DefaultTagColor
+	}
+
+	if code, message, err := isValid(tag); err != nil {
+		slog.Error(err.Error())
+		utils.SendErrorResponse(w, code, message, err, http.StatusBadRequest)
+		return
+	}
+
 	if err := UpdateTag(tag); err != nil {
 		utils.SendErrorResponse(w, "TAG_UPDATE_FAILED", "Error updating tag.", err, http.StatusInternalServerError)
 		return
@@ -75,4 +92,28 @@ func HandleDeleteTag(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusNoContent)
+}
+
+func isValid(tag Tag) (string, string, error) {
+	validTagColors := map[string]bool{
+		"gray":   true,
+		"red":    true,
+		"orange": true,
+		"yellow": true,
+		"green":  true,
+		"teal":   true,
+		"blue":   true,
+		"purple": true,
+		"pink":   true,
+	}
+
+	if strings.TrimSpace(tag.Name) == "" {
+		return "INVALID_TAG_NAME", "Tag name cannot be empty", errors.New("tag name cannot be empty")
+	}
+
+	if !validTagColors[tag.Color] {
+		return "INVALID_TAG_COLOR", "Invalid tag color", fmt.Errorf("invalid tag color: %s", tag.Color)
+	}
+
+	return "", "", nil
 }
