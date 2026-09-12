@@ -24,7 +24,7 @@
         border: none;
         border-radius: 50%;
         cursor: pointer;
-        transition-property: transform, box-shadow;
+        transition-property: transform, outline-color;
         transition-duration: var(--transition-fast);
         transition-timing-function: ease-out;
 
@@ -50,12 +50,13 @@
         }
 
         &.is-selected {
-            box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--neutral-500);
+            outline: 2px solid var(--neutral-500);
+            outline-offset: 2px;
         }
 
         &:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--neutral-600);
+            outline: 2px solid var(--neutral-600);
+            outline-offset: 2px;
         }
 
         &.color-gray {
