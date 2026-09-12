@@ -3,7 +3,7 @@
     background: var(--bg-primary);
     border-bottom: 1px solid var(--neutral-100);
     padding: var(--spacing-4);
-    transition: background-color 200ms ease;
+    transition: background-color var(--transition-fast) ease;
     text-decoration: none;
     color: inherit;
     position: relative;

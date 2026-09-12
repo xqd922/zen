@@ -457,7 +457,7 @@
         flex-shrink: 0;
         cursor: pointer;
         color: var(--neutral-400);
-        transition: color 0.2s ease;
+        transition: color var(--transition-fast) ease;
 
         &:hover {
             color: var(--neutral-600);
@@ -541,7 +541,7 @@
             font: var(--xs);
             font-weight: 500;
             color: var(--text-primary);
-            transition: all 0.2s ease;
+            transition: background-color var(--transition-fast) ease;
             min-width: 32px;
             height: 32px;
             display: flex;

@@ -29,7 +29,7 @@
         /* align with text in listview */
         margin-left: 10px;
         transition-property: stroke;
-        transition-duration: 500ms;
+        transition-duration: var(--transition-normal);
 
         &:hover {
 

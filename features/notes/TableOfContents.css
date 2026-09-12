@@ -15,7 +15,7 @@
         .toc-bar {
             height: 2px;
             background: var(--neutral-300);
-            transition: all 0.15s ease;
+            transition: background var(--transition-fast) ease;
             margin-bottom: var(--spacing-1);
         }
 
@@ -72,7 +72,7 @@
                 border-radius: var(--radius-1);
                 font: var(--xs);
                 color: var(--neutral-200);
-                transition: all 0.1s ease;
+                transition: background-color var(--transition-fast) ease, color var(--transition-fast) ease;
 
                 &:hover {
                     background-color: var(--neutral-700);

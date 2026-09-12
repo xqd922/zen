@@ -114,7 +114,7 @@
             margin: var(--spacing-1);
             border-radius: var(--radius-1);
             cursor: pointer;
-            transition: background-color 0.5s;
+            transition: background-color var(--transition-normal);
 
             &:hover {
                 background-color: var(--neutral-100);

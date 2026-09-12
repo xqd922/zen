@@ -43,7 +43,7 @@
         font: var(--sm);
         font-weight: 500;
         cursor: pointer;
-        transition: background-color 500ms;
+        transition: background-color var(--transition-normal);
 
         svg.lucide {
             width: var(--icon-sm);

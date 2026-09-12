@@ -13,7 +13,7 @@
             object-fit: cover;
             border-radius: var(--radius-1);
             transition-property: box-shadow, opacity;
-            transition-duration: 500ms;
+            transition-duration: var(--transition-normal);
             box-shadow: var(--shadow-2);
             opacity: 0;
             cursor: pointer;

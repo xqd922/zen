@@ -33,7 +33,7 @@
             text-align: left;
             cursor: pointer;
             transition-property: border-color;
-            transition-duration: 500ms;
+            transition-duration: var(--transition-normal);
 
             &:hover {
                 border-color: var(--neutral-400);

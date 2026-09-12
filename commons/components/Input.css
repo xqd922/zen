@@ -12,7 +12,7 @@
         margin-top: var(--spacing-1);
         min-width: 320px;
         outline: none;
-        transition: border-color 200ms;
+        transition: border-color var(--transition-fast);
 
         &:focus {
             border-color: var(--neutral-600);
