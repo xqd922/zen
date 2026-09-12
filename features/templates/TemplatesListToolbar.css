@@ -11,8 +11,8 @@
 
         svg.lucide {
             cursor: pointer;
-            width: 20px;
-            height: 20px;
+            width: var(--icon-md);
+            height: var(--icon-md);
             margin: var(--spacing-2);
             margin-right: 0;
             transition-property: stroke;

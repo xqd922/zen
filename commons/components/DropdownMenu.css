@@ -20,7 +20,7 @@
         max-height: 198px;
         overflow: auto;
         border: 1px solid var(--neutral-100);
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4px);
@@ -39,7 +39,7 @@
         padding-left: var(--spacing-3);
         height: 36px;
         margin: var(--spacing-1);
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         border-bottom: none;
         white-space: nowrap;
         overflow: hidden;
@@ -70,8 +70,8 @@
 
         svg.lucide {
             display: none;
-            width: 20px;
-            height: 20px;
+            width: var(--icon-md);
+            height: var(--icon-md);
             padding: var(--spacing-1);
             margin-right: var(--spacing-2);
             transition: background-color 500ms;
@@ -85,7 +85,7 @@
 
             &:hover {
                 background-color: var(--neutral-200);
-                border-radius: 4px;
+                border-radius: var(--radius-1);
             }
 
             &:active {

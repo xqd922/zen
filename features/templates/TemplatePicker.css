@@ -1,7 +1,7 @@
 .templates-picker {
     padding: var(--spacing-4);
     background-color: var(--neutral-50);
-    border-radius: 4px;
+    border-radius: var(--radius-1);
     margin: var(--spacing-4) 0;
 
     .templates-picker-header {

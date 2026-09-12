@@ -11,7 +11,7 @@
         background-color: var(--bg-secondary);
         z-index: var(--z-base);
         border: 1px solid var(--neutral-100);
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4px);
@@ -37,7 +37,7 @@
         padding-left: var(--spacing-2);
         height: 36px;
         margin: var(--spacing-1);
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         white-space: nowrap;
         overflow: hidden;
         font: var(--sm);
@@ -46,8 +46,8 @@
         transition: background-color 500ms;
 
         svg.lucide {
-            width: 16px;
-            height: 16px;
+            width: var(--icon-sm);
+            height: var(--icon-sm);
 
             line,
             circle,

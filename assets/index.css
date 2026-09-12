@@ -107,6 +107,15 @@
     --z-popover: 3;
     --z-critical: 4;
 
+    /* border radius */
+    --radius-1: 4px;
+    --radius-2: 8px;
+    --radius-full: 9999px;
+
+    /* icon sizing - svg.lucide */
+    --icon-sm: 16px;
+    --icon-md: 20px;
+
     /* layout dimensions */
     --sidebar-width: 220px;
     --notes-list-width: 280px;

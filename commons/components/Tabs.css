@@ -6,7 +6,7 @@
         border: none;
         padding: var(--spacing-1) 10px;
         margin-right: var(--spacing-1);
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         font: var(--sm);
         color: var(--text-secondary);
         cursor: pointer;

@@ -43,7 +43,7 @@
         margin: 0;
         padding: 2px 6px;
         border: 1px solid var(--neutral-300);
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         background: var(--bg-primary);
         outline: none;
         font-family: var(--font-family);
@@ -59,7 +59,7 @@
         border: none;
         background: transparent;
         color: var(--text-secondary);
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         cursor: pointer;
         transition: background-color var(--transition-fast), color var(--transition-fast);
 

@@ -119,8 +119,8 @@
 
             svg.lucide {
                 display: none;
-                width: 20px;
-                height: 20px;
+                width: var(--icon-md);
+                height: var(--icon-md);
                 padding: var(--spacing-1);
                 transition: background-color var(--transition-normal);
 
@@ -133,7 +133,7 @@
 
                 &:hover {
                     background-color: var(--neutral-200);
-                    border-radius: 4px;
+                    border-radius: var(--radius-1);
                 }
 
                 &:active {

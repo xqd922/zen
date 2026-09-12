@@ -6,7 +6,7 @@
     padding: 2px var(--spacing-2);
     background-color: var(--neutral-800);
     color: var(--neutral-50);
-    border-radius: 4px;
+    border-radius: var(--radius-1);
     font-size: 12px;
     max-width: 300px;
     word-wrap: break-word;

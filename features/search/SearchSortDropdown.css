@@ -8,7 +8,7 @@
         gap: 2px;
         padding: var(--spacing-1) 10px;
         border: 0;
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         cursor: pointer;
         white-space: nowrap;
         background-color: transparent;
@@ -30,8 +30,8 @@
         svg.lucide {
             display: block;
             flex-shrink: 0;
-            width: 16px;
-            height: 16px;
+            width: var(--icon-sm);
+            height: var(--icon-sm);
             padding: 0;
 
             path {
@@ -51,7 +51,7 @@
         min-width: 140px;
         background-color: var(--bg-secondary);
         border: 1px solid var(--neutral-100);
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         box-shadow: var(--shadow-4);
         z-index: var(--z-popover);
         opacity: 0;
@@ -67,7 +67,7 @@
         height: 32px;
         padding-left: var(--spacing-3);
         margin: var(--spacing-1);
-        border-radius: 4px;
+        border-radius: var(--radius-1);
         white-space: nowrap;
         cursor: pointer;
         font: var(--sm);

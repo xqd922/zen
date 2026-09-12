@@ -10,7 +10,7 @@
         display: flex;
         align-items: center;
         background-color: var(--neutral-800);
-        border-radius: 50px;
+        border-radius: var(--radius-full);
         box-shadow: var(--shadow-4);
         padding: 10px var(--spacing-3) 10px var(--spacing-5);
         min-width: 280px;
@@ -32,11 +32,11 @@
             align-items: center;
             justify-content: center;
             padding: var(--spacing-1);
-            border-radius: 50px;
+            border-radius: var(--radius-full);
 
             svg.lucide {
-                width: 16px;
-                height: 16px;
+                width: var(--icon-sm);
+                height: var(--icon-sm);
 
                 line,
                 circle,

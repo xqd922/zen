@@ -4,7 +4,7 @@
     max-height: 400px;
     overflow-y: auto;
     padding: var(--spacing-4);
-    border-radius: 4px;
+    border-radius: var(--radius-1);
     margin: var(--spacing-2);
     margin-top: 0px;
     background-color: var(--bg-secondary);

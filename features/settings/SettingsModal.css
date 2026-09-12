@@ -34,7 +34,7 @@
             cursor: pointer;
             font-size: 14px;
             margin: 2px var(--spacing-2);
-            border-radius: 4px;
+            border-radius: var(--radius-1);
             text-decoration: none;
             color: var(--neutral-900);
             transition-property: background-color;
@@ -94,7 +94,7 @@
                     gap: var(--spacing-2);
                     padding: var(--spacing-3) var(--spacing-4);
                     border: 1px dashed var(--neutral-300);
-                    border-radius: 4px;
+                    border-radius: var(--radius-1);
                     color: var(--neutral-400);
                     cursor: pointer;
                     transition-property: color, background-color;
@@ -113,8 +113,8 @@
                     }
 
                     svg {
-                        width: 16px;
-                        height: 16px;
+                        width: var(--icon-sm);
+                        height: var(--icon-sm);
                     }
                 }
 
@@ -132,12 +132,12 @@
                         height: 8px;
                         background-color: var(--neutral-200);
                         box-shadow: inset var(--shadow-4);
-                        border-radius: 4px;
+                        border-radius: var(--radius-1);
                         overflow: hidden;
 
                         .upload-progress-fill {
                             height: 100%;
-                            border-radius: 4px;
+                            border-radius: var(--radius-1);
                             background-color: var(--neutral-700);
                             transition: width var(--transition-normal) ease;
                         }
@@ -170,8 +170,8 @@
                             gap: var(--spacing-1);
 
                             svg {
-                                width: 16px;
-                                height: 16px;
+                                width: var(--icon-sm);
+                                height: var(--icon-sm);
 
                                 line,
                                 circle,
@@ -275,7 +275,7 @@
                 .theme-option {
                     cursor: pointer;
                     border: 1px solid var(--neutral-200);
-                    border-radius: 8px;
+                    border-radius: var(--radius-2);
                     padding: var(--spacing-3);
                     transition: all 0.2s ease;
 
@@ -402,7 +402,7 @@
                         padding: var(--spacing-3);
                         background-color: var(--neutral-100);
                         border: 1px solid var(--neutral-200);
-                        border-radius: 4px;
+                        border-radius: var(--radius-1);
                         font-family: var(--font-family-code);
                         font-size: 14px;
                         word-break: break-all;
@@ -424,7 +424,7 @@
                     text-align: center;
                     padding: var(--spacing-8);
                     background-color: var(--bg-secondary);
-                    border-radius: 8px;
+                    border-radius: var(--radius-2);
                 }
 
                 .mcp-tokens-list {
