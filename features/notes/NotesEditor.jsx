@@ -46,6 +46,7 @@ export default function NotesEditor({ isNewNote, isModal, isExpandable = false, 
   const titleRef = useRef(null);
   const textareaRef = useRef(null);
   const contentRef = useRef(null);
+  const editorRef = useRef(null);
 
   const visibleHeadings = useVisibleHeadings(contentRef, content, isEditable, isEditorExpanded);
 
@@ -87,6 +88,14 @@ export default function NotesEditor({ isNewNote, isModal, isExpandable = false, 
 
     if (isNewNote !== true) {
       document.title = title === "" ? "Zen" : title;
+    }
+  }, []);
+
+  useEffect(() => {
+    // The scrolling container belongs to the page and outlives this remount
+    const scrollContainer = editorRef.current?.closest(".notes-editor-container");
+    if (scrollContainer !== null && scrollContainer !== undefined) {
+      scrollContainer.scrollTop = 0;
     }
   }, []);
 
@@ -488,7 +497,7 @@ export default function NotesEditor({ isNewNote, isModal, isExpandable = false, 
   }
 
   return (
-    <div className="notes-editor" tabIndex="0" onPaste={handlePaste}>
+    <div className="notes-editor" tabIndex="0" onPaste={handlePaste} ref={editorRef}>
       <Toolbar
         note={selectedNote}
         isNewNote={isNewNote}
