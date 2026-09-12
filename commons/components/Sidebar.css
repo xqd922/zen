@@ -74,9 +74,8 @@
         margin-left: var(--spacing-2);
 
         .sidebar-section-title {
-            font: var(--sm);
+            font: var(--xs);
             color: var(--neutral-500);
-            font-size: 12px;
             font-weight: 600;
             margin-bottom: var(--spacing-1);
         }

@@ -100,7 +100,7 @@
     }
 
     .canvas-toolbar-zoom-level {
-        font-size: 12px;
+        font: var(--xs);
         font-weight: 500;
         min-width: 48px;
         width: auto;

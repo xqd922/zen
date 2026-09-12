@@ -2,6 +2,7 @@
 *.db-shm
 *.db-wal
 *.bak
+zen
 /tmp
 /images
 /assets/bundle.js

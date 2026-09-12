@@ -82,8 +82,7 @@
         }
 
         .canvas-note-picker-section-title {
-            font: var(--sm);
-            font-size: 12px;
+            font: var(--xs);
             color: var(--neutral-400);
             padding: 10px var(--spacing-4);
             font-weight: 500;

@@ -68,7 +68,10 @@
     --p1: normal 1rem/1.5 var(--font-family);
     /* 1rem / var(--font-scale) */
     --sm: normal 0.889rem/1.4 var(--font-family);
+    /* 1rem / pow(var(--font-scale), 2) */
+    --xs: normal 0.79rem/1.4 var(--font-family);
     --code: normal 0.889rem/1.4 var(--font-family-code);
+    --xs-code: normal 0.79rem/1.4 var(--font-family-code);
 
     /* spacing - 4px-based system */
     /* https://medium.com/dwarves-design/the-principle-of-spacing-in-ui-design-part-1-3354d0d65e51 */

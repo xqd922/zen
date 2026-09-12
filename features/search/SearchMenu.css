@@ -93,8 +93,7 @@
         }
 
         .search-section-title {
-            font: var(--sm);
-            font-size: 12px;
+            font: var(--xs);
             color: var(--text-secondary);
             padding: 10px;
         }

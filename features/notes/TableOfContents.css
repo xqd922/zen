@@ -70,10 +70,9 @@
                 padding: var(--spacing-1) var(--spacing-1);
                 cursor: pointer;
                 border-radius: var(--radius-1);
-                font: var(--sm);
+                font: var(--xs);
                 color: var(--neutral-200);
                 transition: all 0.1s ease;
-                font-size: 12px;
 
                 &:hover {
                     background-color: var(--neutral-700);

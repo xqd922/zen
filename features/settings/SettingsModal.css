@@ -72,9 +72,7 @@
                 border: 1px solid var(--neutral-200);
                 border-radius: 6px;
                 padding: var(--spacing-3);
-                font-family: var(--font-family-code);
-                font-size: 12px;
-                line-height: 1.4;
+                font: var(--xs-code);
                 color: var(--neutral-600);
                 margin: var(--spacing-3) 0;
                 overflow-x: auto;
@@ -361,8 +359,7 @@
                             background-color: var(--neutral-100);
                             padding: 2px var(--spacing-1);
                             border-radius: 3px;
-                            font-family: var(--font-family-code);
-                            font-size: 12px;
+                            font: var(--xs-code);
                             color: var(--neutral-700);
                         }
                     }
@@ -449,7 +446,7 @@
                             }
 
                             .mcp-token-date {
-                                font-size: 12px;
+                                font: var(--xs);
                                 color: var(--neutral-400);
                             }
                         }

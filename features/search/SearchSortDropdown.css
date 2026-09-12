@@ -70,8 +70,7 @@
         border-radius: var(--radius-1);
         white-space: nowrap;
         cursor: pointer;
-        font: var(--sm);
-        font-size: 13px;
+        font: var(--xs);
         color: var(--text-primary);
         transition: background-color var(--transition-fast) ease;
 

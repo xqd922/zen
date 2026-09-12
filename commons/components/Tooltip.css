@@ -7,7 +7,7 @@
     background-color: var(--neutral-800);
     color: var(--neutral-50);
     border-radius: var(--radius-1);
-    font-size: 12px;
+    font: var(--xs);
     max-width: 300px;
     word-wrap: break-word;
     box-shadow: var(--shadow-4);
@@ -39,7 +39,7 @@
 
     div {
         color: var(--neutral-400);
-        font-size: 12px;
+        font: var(--xs);
         margin-left: 10px;
     }
 }

@@ -80,7 +80,7 @@
             margin-top: var(--spacing-1);
 
             .canvas-card-date {
-                font-size: 12px;
+                font: var(--xs);
                 color: var(--text-secondary);
             }
 

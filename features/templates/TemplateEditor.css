@@ -107,9 +107,7 @@
                 border: 1px solid var(--neutral-200);
                 border-radius: 6px;
                 padding: var(--spacing-3);
-                font-family: var(--font-family-code);
-                font-size: 12px;
-                line-height: 1.4;
+                font: var(--xs-code);
                 color: var(--neutral-600);
                 margin-top: var(--spacing-1);
                 overflow-x: auto;
