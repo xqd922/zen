@@ -52,7 +52,7 @@
         padding: var(--spacing-8) var(--spacing-4);
         text-align: center;
         color: var(--neutral-400);
-        font-size: 14px;
+        font: var(--sm);
     }
 
     .notes-list-load-more-button {

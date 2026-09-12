@@ -72,6 +72,7 @@
     --xs: normal 0.79rem/1.4 var(--font-family);
     --code: normal 0.889rem/1.4 var(--font-family-code);
     --xs-code: normal 0.79rem/1.4 var(--font-family-code);
+    --p1-code: normal 1rem/1.5 var(--font-family-code);
 
     /* spacing - 4px-based system */
     /* https://medium.com/dwarves-design/the-principle-of-spacing-in-ui-design-part-1-3354d0d65e51 */
@@ -413,11 +414,11 @@ svg.lucide {
     align-items: stretch;
     margin-right: var(--spacing-1);
     margin-bottom: var(--spacing-1);
-    border-radius: 4px;
-    font-weight: 500;
+    border-radius: var(--radius-1);
     color: var(--tag-text, var(--neutral-400));
     background-color: var(--tag-bg, var(--neutral-100));
-    font-size: 14px;
+    font: var(--sm);
+    font-weight: 500;
     transition-property: color, background-color;
     transition-duration: var(--transition-normal);
     cursor: pointer;
@@ -453,7 +454,7 @@ svg.lucide {
             align-items: center;
             justify-content: center;
             width: 30px;
-            border-radius: 4px;
+            border-radius: var(--radius-1);
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             cursor: pointer;

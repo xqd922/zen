@@ -22,14 +22,14 @@
     }
 
     .templates-list-item-title {
-        font-size: 16px;
+        font: var(--p1);
         font-weight: 500;
         margin: 0 0 var(--spacing-1) 0;
         line-height: 1.4;
     }
 
     .templates-list-item-description {
-        font-size: 14px;
+        font: var(--sm);
         color: var(--neutral-400);
         margin: var(--spacing-1) 0 0 0;
         line-height: 1.3;

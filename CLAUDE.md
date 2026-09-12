@@ -216,16 +216,16 @@ All Go commands must include the `--tags "fts5"` flag for SQLite FTS5 support.
 - Keep these at zero: `!important`, ID selectors, `rem`/`em` outside `index.css`, tabs, `prefers-color-scheme` in a component file
 
 #### CSS Variables (Design Tokens)
-- All values must use the tokens defined in `assets/index.css` (colors, spacing, shadows, typography, z-index, transitions) — never hardcode a value that duplicates or approximates an existing token
-- Colors: use `--neutral-*`, `--red-*`, `--yellow-*`, `--green-*`, `--text-*`, `--bg-*` variables, not hex/rgb/named colors (`white`, `black`, `#FFF`, etc.) — exception: colors that must stay constant across light/dark themes (e.g. white text/icons on a permanently dark overlay) may use literal `white`/`black`/`rgba(0, 0, 0, ...)` since no theme-aware token applies
-- To derive a translucent variant of a token color, use relative color syntax instead of a hardcoded rgba: `rgb(from var(--yellow-400) r g b / 0.1)`, not `rgba(250, 204, 21, 0.1)`
-- Spacing: use `--spacing-1` through `--spacing-8` (4/8/12/16/20/24/32px) for padding/margin/gap — never hardcode a pixel value that matches one of these
-- Shadows: use `--shadow-1` through `--shadow-6`, never hand-write an equivalent `box-shadow` value
-- Typography: use `--h1`–`--h6`, `--p1`, `--sm`, `--code` via the `font` shorthand, never hardcode `font-size`/`line-height`
-- No `rem` or `em` units outside `assets/index.css` — use `px` for one-off sizes not covered by a token, since the token system is the source of truth for scalable values
-- z-index: always use `--z-base`, `--z-modal`, `--z-popover`, `--z-critical` — never a raw number
-- Use semantic z-index layering system:
-  - `z-index: 1` (`--z-base`) - Basic overlays (editor components, dropdown menus)
-  - `z-index: 2` (`--z-modal`) - Modal backdrops, mobile navbar, sidebar overlay
-  - `z-index: 3` (`--z-popover`) - Interactive content (toast notifications, sidebar content, tooltips)
-  - `z-index: 4` (`--z-critical`) - Critical notifications (offline indicator)
+**Read `assets/index.css` first** — it is the full list of tokens (colors, spacing,
+typography, shadows, radius, icons, z-index, transitions) and the source of truth for
+their values. Never hardcode a value that an existing token already covers.
+
+Non-obvious rules the token list does not tell you:
+
+- Typography goes through the `font` shorthand, never a bare `font-size`/`line-height`. The shorthand **resets** `font-weight`, `line-height` and `font-family` — put any of those AFTER it, never before. Declaring `font-family` alone is fine when a block should change family but inherit its size
+- Colors: no hex/rgb/named literals. Exception: a color that must stay constant across themes (white text on a permanently dark overlay) — no theme-aware token applies
+- For a translucent variant of a token color use relative color syntax: `rgb(from var(--yellow-400) r g b / 0.1)`, not a hardcoded rgba
+- Theming: every themed token is declared once in `:root` as `light-dark(<light>, <dark>)`; `[data-theme]` only sets `color-scheme`. Never add a second block redefining tokens
+- Use `50%` for circles, not `--radius-full` — `50%` follows the aspect ratio and stays correct if the element is not square
+- z-index layers are semantic: `--z-base` overlays, `--z-modal` backdrops and mobile navbar, `--z-popover` toasts and tooltips, `--z-critical` offline indicator
+- No `rem`/`em` outside `assets/index.css`; use `px` for one-off sizes no token covers

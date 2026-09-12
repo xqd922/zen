@@ -86,7 +86,7 @@
             padding: var(--spacing-1) 0;
             cursor: pointer;
             text-decoration: none;
-            font-size: 14px;
+            font: var(--sm);
             font-weight: 500;
             color: var(--neutral-400);
             transition: color var(--transition-normal);
@@ -112,12 +112,13 @@
 
             &:hover {
                 svg.lucide {
-                    display: block;
+                    visibility: visible;
                 }
             }
 
             svg.lucide {
-                display: none;
+                visibility: hidden;
+                flex-shrink: 0;
                 width: var(--icon-md);
                 height: var(--icon-md);
                 padding: var(--spacing-1);

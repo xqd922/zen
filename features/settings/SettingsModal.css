@@ -32,7 +32,7 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            font-size: 14px;
+            font: var(--sm);
             margin: 2px var(--spacing-2);
             border-radius: var(--radius-1);
             text-decoration: none;
@@ -400,8 +400,7 @@
                         background-color: var(--neutral-100);
                         border: 1px solid var(--neutral-200);
                         border-radius: var(--radius-1);
-                        font-family: var(--font-family-code);
-                        font-size: 14px;
+                        font: var(--code);
                         word-break: break-all;
                         border-style: dashed;
                     }
@@ -416,7 +415,7 @@
                 }
 
                 .mcp-no-tokens {
-                    font-size: 14px;
+                    font: var(--sm);
                     color: var(--neutral-400);
                     text-align: center;
                     padding: var(--spacing-8);

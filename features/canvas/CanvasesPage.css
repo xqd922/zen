@@ -65,7 +65,7 @@
         border-top: 1px solid var(--neutral-100);
 
         .canvas-card-title {
-            font-size: 14px;
+            font: var(--sm);
             font-weight: 500;
             color: var(--text-primary);
             overflow: hidden;
