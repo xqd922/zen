@@ -2,8 +2,8 @@ package users
 
 import (
 	"fmt"
-	"log/slog"
 	"golang.org/x/crypto/bcrypt"
+	"log/slog"
 )
 
 func HashPassword(password string) (string, error) {
