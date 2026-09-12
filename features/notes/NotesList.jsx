@@ -17,12 +17,15 @@ import EmptyState from '../../commons/components/EmptyState.jsx';
 import TagItem from "../tags/TagItem.jsx";
 import "./NotesList.css";
 
+const NOTES_PER_PAGE = 100;
+
 export default function NotesList({ notes = [], total, isLoading, images = [], imagesTotal, isImagesLoading, view, onViewChange, onLoadMoreClick, onLoadMoreImagesClick, isMultiSelect, selectedIds, onMultiSelectStart, onToggleSelect }) {
   let listClassName = "notes-list";
   let content = <div className="notes-list-spinner"><Spinner /></div>;
   let loadMoreHandler = onLoadMoreClick;
   let currentTotal = total;
   let currentItems = notes;
+  let isCurrentLoading = isLoading;
 
   let items = notes.map(note => <NotesListItem note={note} key={note.noteId} isMultiSelect={isMultiSelect} isSelected={selectedIds.includes(note.noteId)} onMultiSelectStart={onMultiSelectStart} onToggleSelect={onToggleSelect} />);
 
@@ -40,13 +43,14 @@ export default function NotesList({ notes = [], total, isLoading, images = [], i
     loadMoreHandler = onLoadMoreImagesClick;
     currentTotal = imagesTotal;
     currentItems = images;
+    isCurrentLoading = isImagesLoading;
   }
 
-  if ((view === "gallery" && !isImagesLoading) || (view !== "gallery" && !isLoading)) {
+  if (!isCurrentLoading || currentItems.length > 0) {
     content = (
       <div className={listClassName}>
         {items}
-        <LoadMoreButton items={currentItems} total={currentTotal} onLoadMoreClick={loadMoreHandler} />
+        <LoadMoreButton items={currentItems} total={currentTotal} isLoading={isCurrentLoading} onLoadMoreClick={loadMoreHandler} />
         <EmptyList items={currentItems} view={view} />
       </div>
     )
@@ -160,26 +164,30 @@ function NotesGridItem({ note, index }) {
 
   if (isMobile()) {
     return (
-      <Link className={`notes-grid-item ${note.isPinned ? 'pinned' : ''} reveal-animate`} to={link} shouldPreserveSearchParams style={`--reveal-index: ${index + 1}`}>
+      <Link className={`notes-grid-item ${note.isPinned ? 'pinned' : ''} reveal-animate`} to={link} shouldPreserveSearchParams style={`--reveal-index: ${(index % NOTES_PER_PAGE) + 1}`}>
         {content}
       </Link>
     );
   }
 
   return (
-    <div className={`notes-grid-item ${note.isPinned ? 'pinned' : ''} reveal-animate`} onClick={handleClick} style={`--reveal-index: ${index + 1}`}>
+    <div className={`notes-grid-item ${note.isPinned ? 'pinned' : ''} reveal-animate`} onClick={handleClick} style={`--reveal-index: ${(index % NOTES_PER_PAGE) + 1}`}>
       {content}
     </div>
   );
 }
 
-function LoadMoreButton({ items, total, onLoadMoreClick }) {
+function LoadMoreButton({ items, total, isLoading, onLoadMoreClick }) {
   if (items.length === 0) {
     return null;
   }
 
   if (items.length === total) {
     return null;
+  }
+
+  if (isLoading) {
+    return <div className="notes-list-spinner"><Spinner /></div>;
   }
 
   return <Button className="notes-list-load-more-button" onClick={onLoadMoreClick}>Load more</Button>
