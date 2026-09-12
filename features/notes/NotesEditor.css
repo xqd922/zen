@@ -455,13 +455,12 @@
 
     .task-list-item-checkbox {
         flex-shrink: 0;
-        cursor: pointer;
+        cursor: default;
         color: var(--neutral-400);
         transition: color var(--transition-fast) ease;
 
         &:hover {
             color: var(--neutral-600);
-            cursor: not-allowed;
         }
 
         &.checked {
@@ -471,6 +470,10 @@
                 color: var(--neutral-600);
             }
         }
+    }
+
+    .task-list-item.enabled>.task-item-content>.task-list-item-checkbox {
+        cursor: pointer;
     }
 
     .task-list-item>.task-list-container {

@@ -5,6 +5,7 @@ import NotesEditorFormattingToolbar from './NotesEditorFormattingToolbar.jsx';
 import TableOfContents from './TableOfContents.jsx';
 import TemplatePicker from '../templates/TemplatePicker.jsx';
 import renderMarkdown from '../../commons/utils/renderMarkdown.js';
+import { toggleTaskAtLine } from '../../commons/utils/toggleTaskLine.js';
 import handleCodeCopyClick from '../../commons/utils/copyCodeBlock.js';
 import navigateTo from '../../commons/utils/navigateTo.js';
 import isMobile from '../../commons/utils/isMobile.js';
@@ -326,8 +327,39 @@ export default function NotesEditor({ isNewNote, isModal, isExpandable = false, 
     closeModal();
   }
 
+  function handleTaskCheckboxClick(checkbox) {
+    const lineIndex = parseInt(checkbox.getAttribute('data-line'), 10);
+    const newContent = toggleTaskAtLine(content, lineIndex);
+    if (newContent === null) {
+      return;
+    }
+
+    setContent(newContent);
+
+    if (isNewNote === true) {
+      return;
+    }
+
+    const note = {
+      title: title,
+      content: newContent,
+      tags: tags,
+    };
+
+    ApiClient.updateNote(selectedNote.noteId, note)
+      .then(() => {
+        handleNoteChange();
+      });
+  }
+
   function handleRenderedContentClick(e) {
     if (handleCodeCopyClick(e) === true) {
+      return;
+    }
+
+    const checkbox = e.target.closest('.task-list-item-checkbox[data-line]');
+    if (checkbox !== null) {
+      handleTaskCheckboxClick(checkbox);
       return;
     }
 
@@ -413,7 +445,7 @@ export default function NotesEditor({ isNewNote, isModal, isExpandable = false, 
     );
   } else {
     contentArea = (
-      <div className="notes-editor-rendered" ref={contentRef} dangerouslySetInnerHTML={{ __html: renderMarkdown(content, { hasCodeCopyButton: true }) }} onClick={handleRenderedContentClick} />
+      <div className="notes-editor-rendered" ref={contentRef} dangerouslySetInnerHTML={{ __html: renderMarkdown(content, { hasCodeCopyButton: true, hasClickableTasks: true }) }} onClick={handleRenderedContentClick} />
     );
   }
 

@@ -1,6 +1,7 @@
 import { h, useState, useEffect } from '../../assets/preact.esm.js';
 import ApiClient from '../../commons/http/ApiClient.js';
 import renderMarkdown from '../../commons/utils/renderMarkdown.js';
+import { toggleTaskAtLine } from '../../commons/utils/toggleTaskLine.js';
 import handleCodeCopyClick from '../../commons/utils/copyCodeBlock.js';
 import { closeModal, openModal } from '../../commons/components/Modal.jsx';
 import Lightbox from '../../commons/components/Lightbox.jsx';
@@ -27,8 +28,31 @@ export default function NotePreview({ noteId }) {
     closeModal();
   }
 
+  function handleTaskCheckboxClick(checkbox) {
+    const lineIndex = parseInt(checkbox.getAttribute('data-line'), 10);
+    const newContent = toggleTaskAtLine(note.content, lineIndex);
+    if (newContent === null) {
+      return;
+    }
+
+    const updatedNote = { ...note, content: newContent };
+    setNote(updatedNote);
+
+    ApiClient.updateNote(note.noteId, {
+      title: note.title,
+      content: newContent,
+      tags: note.tags,
+    });
+  }
+
   function handleContentClick(e) {
     if (handleCodeCopyClick(e) === true) {
+      return;
+    }
+
+    const checkbox = e.target.closest('.task-list-item-checkbox[data-line]');
+    if (checkbox !== null) {
+      handleTaskCheckboxClick(checkbox);
       return;
     }
 
@@ -50,7 +74,7 @@ export default function NotePreview({ noteId }) {
       <div className="note-preview-header">
         <div className="notes-editor-title">{titleText}</div>
       </div>
-      <div className="notes-editor-rendered" dangerouslySetInnerHTML={{ __html: renderMarkdown(note.content, { hasCodeCopyButton: true }) }} onClick={handleContentClick} />
+      <div className="notes-editor-rendered" dangerouslySetInnerHTML={{ __html: renderMarkdown(note.content, { hasCodeCopyButton: true, hasClickableTasks: true }) }} onClick={handleContentClick} />
     </div>
   );
 }
