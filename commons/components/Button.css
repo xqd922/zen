@@ -3,7 +3,7 @@
     height: 36px;
     align-items: center;
     justify-content: space-between;
-    padding: 0 8px;
+    padding: 0 var(--spacing-2);
     border-radius: 6px;
     border: 1px solid var(--neutral-100);
     overflow: hidden;
@@ -27,7 +27,7 @@
         cursor: pointer;
         width: 20px;
         height: 20px;
-        margin: 8px;
+        margin: var(--spacing-2);
         margin-right: 0;
         transition-property: stroke;
         transition-duration: var(--transition-normal);

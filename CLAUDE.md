@@ -201,13 +201,19 @@ All Go commands must include the `--tags "fts5"` flag for SQLite FTS5 support.
 - Consistent modal structure with header, content, and close button
 
 #### CSS Classes
-- BEM-like naming: `notes-editor-toolbar`, `left-toolbar`
+- One component, one stylesheet, one root class named after the component: `.notes-editor-menu`
+- Flat, kebab-case names prefixed with the root class: `.notes-editor-menu-option` (not BEM `__`/`--`)
 - 4-space indentation
-- Use CSS nesting with `&` for modifiers and pseudo-elements: `&.visible`, `&:hover`, `&::before`
+- Use CSS nesting with `&` for modifiers and pseudo-elements: `&.is-open`, `&:hover`, `&::before`
 - Child classes and elements nested directly without `&`: `.child-class`, `svg.lucide`
 - Nest all child/descendant selectors under their parent instead of declaring them flat at the top level — only declare a new top-level selector for a class that is a genuinely separate component, not a child of an existing one
+- Nest at most 4 levels deep; extract a sub-component past that
+- State classes use `is-`/`has-` prefixes: `&.is-open`, `&.is-selected`, `&.has-preview`
+- A component styles its inside; the parent positions it — no `margin` on a root class, use `gap` on the parent
+- Namespace `@keyframes` with the component prefix: `toast-slide-up`, not `fade-in`
 - Conditional classes using template literals
 - Minimal inline styles, prefer CSS classes
+- Keep these at zero: `!important`, ID selectors, `rem`/`em` outside `index.css`, tabs, `prefers-color-scheme` in a component file
 
 #### CSS Variables (Design Tokens)
 - All values must use the tokens defined in `assets/index.css` (colors, spacing, shadows, typography, z-index, transitions) — never hardcode a value that duplicates or approximates an existing token

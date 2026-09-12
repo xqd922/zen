@@ -28,13 +28,13 @@
 
             &:active {
                 transform: scale(0.98);
-                transition: transform 150ms ease-out;
+                transition: transform var(--transition-fast) ease-out;
             }
         }
 
         .image-gallery-empty-text {
             font: var(--sm);
-            padding: 16px;
+            padding: var(--spacing-4);
             color: var(--neutral-400);
             display: flex;
             justify-content: center;

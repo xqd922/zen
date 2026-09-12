@@ -1,6 +1,6 @@
 .templates-editor-container {
     flex: 1;
-    padding: 24px;
+    padding: var(--spacing-6);
     padding-top: 0;
     border-left: 1px solid var(--neutral-100);
 }
@@ -15,7 +15,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 16px 0;
+        padding: var(--spacing-4) 0;
         background: var(--bg-primary);
 
         .templates-editor-header-left {
@@ -63,7 +63,7 @@
         overflow-y: auto;
 
         .input-container {
-            margin-bottom: 24px;
+            margin-bottom: var(--spacing-6);
         }
 
         .form-field-container .notes-editor-tags {
@@ -71,13 +71,13 @@
         }
 
         .templates-editor-field {
-            margin-bottom: 24px;
+            margin-bottom: var(--spacing-6);
         }
 
         .templates-editor-textarea {
             width: 100%;
             min-height: 200px;
-            padding: 12px;
+            padding: var(--spacing-3);
             border: 1px solid var(--neutral-200);
             border-radius: 4px;
             font-family: var(--font-family-code);
@@ -106,7 +106,7 @@
                 background-color: var(--neutral-50);
                 border: 1px solid var(--neutral-200);
                 border-radius: 6px;
-                padding: 12px;
+                padding: var(--spacing-3);
                 font-family: var(--font-family-code);
                 font-size: 12px;
                 line-height: 1.4;
@@ -122,10 +122,10 @@
 @media (max-width: 768px) {
     .templates-editor {
         .templates-editor-content {
-            padding: 12px;
+            padding: var(--spacing-3);
 
             .templates-editor-field {
-                margin-bottom: 20px;
+                margin-bottom: var(--spacing-5);
             }
         }
 

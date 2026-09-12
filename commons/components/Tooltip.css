@@ -3,7 +3,7 @@
     z-index: var(--z-popover);
     display: flex;
     align-items: center;
-    padding: 2px 8px;
+    padding: 2px var(--spacing-2);
     background-color: var(--neutral-800);
     color: var(--neutral-50);
     border-radius: 4px;
@@ -13,7 +13,7 @@
     box-shadow: var(--shadow-4);
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+    transition: opacity var(--transition-fast) ease-in-out, transform var(--transition-fast) ease-in-out;
     will-change: transform, opacity;
 
     &.top {

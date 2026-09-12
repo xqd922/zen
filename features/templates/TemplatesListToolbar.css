@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: var(--spacing-2) 0;
-    margin: 6px var(--spacing-3) 0 4px;
+    margin: 6px var(--spacing-3) 0 var(--spacing-1);
 
     .templates-list-toolbar-left {
         display: flex;

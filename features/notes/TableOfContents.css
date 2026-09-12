@@ -4,19 +4,19 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    z-index: 1;
+    z-index: var(--z-base);
 
     .toc-bars {
         display: flex;
         flex-direction: column;
         gap: 2px;
-        padding: 16px 8px;
+        padding: var(--spacing-4) var(--spacing-2);
 
         .toc-bar {
             height: 2px;
             background: var(--neutral-300);
             transition: all 0.15s ease;
-            margin-bottom: 4px;
+            margin-bottom: var(--spacing-1);
         }
 
         .toc-bar-level-1 {
@@ -48,14 +48,14 @@
     left: 30px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: var(--z-base);
     animation: toc-slide-right 300ms ease-out;
 
     .toc-popover-content {
         background: var(--neutral-800);
         border-radius: 4px;
         box-shadow: var(--shadow-4);
-        padding: 4px;
+        padding: var(--spacing-1);
         min-width: 100px;
         max-width: 280px;
         max-height: 400px;
@@ -64,10 +64,10 @@
         .toc-items {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: var(--spacing-1);
 
             .toc-item {
-                padding: 4px 4px;
+                padding: var(--spacing-1) var(--spacing-1);
                 cursor: pointer;
                 border-radius: 4px;
                 font: var(--sm);

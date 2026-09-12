@@ -68,7 +68,7 @@
 .modal-footer-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    margin-top: var(--spacing-4);
     padding: var(--spacing-4);
     padding-left: var(--spacing-2);
     background-color: var(--neutral-50);

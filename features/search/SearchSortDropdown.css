@@ -6,7 +6,7 @@
         display: flex;
         align-items: center;
         gap: 2px;
-        padding: 4px 10px;
+        padding: var(--spacing-1) 10px;
         border: 0;
         border-radius: 4px;
         cursor: pointer;
@@ -43,7 +43,7 @@
     .search-sort-dropdown-menu {
         list-style: none;
         margin: 0;
-        margin-top: 4px;
+        margin-top: var(--spacing-1);
         padding: 0;
         position: absolute;
         top: 100%;
@@ -57,7 +57,7 @@
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4px);
-        transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0.15s ease-out;
+        transition: opacity var(--transition-fast) ease-out, transform var(--transition-fast) ease-out, visibility var(--transition-fast) ease-out;
         pointer-events: none;
     }
 
@@ -65,8 +65,8 @@
         display: flex;
         align-items: center;
         height: 32px;
-        padding-left: 12px;
-        margin: 4px;
+        padding-left: var(--spacing-3);
+        margin: var(--spacing-1);
         border-radius: 4px;
         white-space: nowrap;
         cursor: pointer;

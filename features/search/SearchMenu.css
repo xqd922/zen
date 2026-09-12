@@ -112,7 +112,7 @@
             text-decoration: none;
             color: inherit;
             padding: 6px;
-            margin: 4px;
+            margin: var(--spacing-1);
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.5s;
@@ -180,7 +180,7 @@
                 border-radius: 4px;
                 box-shadow: var(--shadow-2);
                 cursor: pointer;
-                transition: opacity 150ms;
+                transition: opacity var(--transition-fast);
 
                 &:hover {
                     opacity: 0.8;
@@ -188,7 +188,7 @@
 
                 &:active {
                     transform: scale(0.98);
-                    transition: transform 150ms ease-out;
+                    transition: transform var(--transition-fast) ease-out;
                 }
             }
         }

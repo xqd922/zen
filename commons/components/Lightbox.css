@@ -36,16 +36,16 @@
             top: 16px;
             right: 16px;
             display: flex;
-            gap: 8px;
+            gap: var(--spacing-2);
             opacity: 0;
             transition: opacity var(--transition-normal);
-            z-index: 1;
+            z-index: var(--z-base);
 
 
             .lightbox-similar-button,
             .lightbox-open-new-tab-button,
             .lightbox-close-button {
-                padding: 8px;
+                padding: var(--spacing-2);
                 cursor: pointer;
                 border-radius: 4px;
                 background-color: rgba(0, 0, 0, 0.5);
@@ -82,7 +82,7 @@
         flex-shrink: 0;
 
         .lightbox-similar-images-button {
-            padding: 6px 12px;
+            padding: 6px var(--spacing-3);
             background-color: var(--neutral-50);
             color: var(--text-primary);
             border: none;
@@ -115,12 +115,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px;
+            padding: var(--spacing-2);
             flex-shrink: 0;
 
             .lightbox-similar-images-back,
             .lightbox-similar-images-close {
-                padding: 8px;
+                padding: var(--spacing-2);
                 cursor: pointer;
                 border-radius: 4px;
                 background-color: rgba(0, 0, 0, 0.5);
@@ -169,7 +169,7 @@
 
                 &:hover {
                     transform: scale(0.95) translateY(-2px);
-                    z-index: 1;
+                    z-index: var(--z-base);
                 }
 
                 &:active {

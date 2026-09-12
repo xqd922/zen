@@ -10,13 +10,13 @@
         margin: 0;
         padding: 0;
         top: 100%;
-        margin-top: 4px;
+        margin-top: var(--spacing-1);
         position: absolute;
         left: 0;
         min-width: 100%;
         box-shadow: var(--shadow-4);
         background-color: var(--bg-secondary);
-        z-index: 1;
+        z-index: var(--z-base);
         max-height: 198px;
         overflow: auto;
         border: 1px solid var(--neutral-100);
@@ -24,7 +24,7 @@
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4px);
-        transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0.15s ease-out;
+        transition: opacity var(--transition-fast) ease-out, transform var(--transition-fast) ease-out, visibility var(--transition-fast) ease-out;
         pointer-events: none;
 
         &::-webkit-scrollbar {
@@ -36,9 +36,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 12px;
+        padding-left: var(--spacing-3);
         height: 36px;
-        margin: 4px;
+        margin: var(--spacing-1);
         border-radius: 4px;
         border-bottom: none;
         white-space: nowrap;
@@ -65,15 +65,15 @@
 
         &:active {
             transform: scale(0.98);
-            transition: transform 150ms ease-out;
+            transition: transform var(--transition-fast) ease-out;
         }
 
         svg.lucide {
             display: none;
             width: 20px;
             height: 20px;
-            padding: 4px;
-            margin-right: 8px;
+            padding: var(--spacing-1);
+            margin-right: var(--spacing-2);
             transition: background-color 500ms;
 
             line,
@@ -90,7 +90,7 @@
 
             &:active {
                 transform: scale(0.97);
-                transition: transform 150ms ease-out;
+                transition: transform var(--transition-fast) ease-out;
             }
         }
     }
